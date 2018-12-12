@@ -1,12 +1,18 @@
 {
     "name": "focus237/coach-website",
     "require": {
-        "pecee/simple-router": "4.2.0.6"
+        "pecee/simple-router": "4.2.0.6",
+        "jenssegers/blade": "^1.1"
     },
     "authors": [
         {
             "name": "focus237",
             "email": "emarc237@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
 }
