@@ -1,0 +1,12 @@
+{
+    "name": "focus237/coach-website",
+    "require": {
+        "pecee/simple-router": "4.2.0.6"
+    },
+    "authors": [
+        {
+            "name": "focus237",
+            "email": "emarc237@gmail.com"
+        }
+    ]
+}
