@@ -1,6 +1,6 @@
 <?php
 
-require '../app/helpers.php';
+require 'app/helpers.php';
 
 use Pecee\SimpleRouter\SimpleRouter as Route;
 use App\Renderer;

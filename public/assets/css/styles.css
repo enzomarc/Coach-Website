@@ -303,7 +303,9 @@ div.section div#top {
     padding: 8% 5%;
     text-align: center;
     font-family: Nunito, sans-serif;
-    background-color: #fefefe;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 div.section div#top h6 {

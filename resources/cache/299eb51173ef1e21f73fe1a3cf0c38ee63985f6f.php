@@ -55,7 +55,7 @@
 
     <div class="section" id="adult-section">
 
-        <div class="row" id="top">
+        <div class="row adult-top" id="top">
             <h5>Adultes</h5>
             <hr>
             <h6>Confus ? Besoin de clarté ? Besoin d'outils pour transformer vos idées en business ?</h6>
@@ -117,7 +117,7 @@
 
     <div class="section" id="company-section">
 
-        <div class="row" id="top">
+        <div class="row company-top" id="top">
             <h5>Entreprises</h5>
             <hr>
             <h6 style="padding: 1% 20%">Business coaching: Rebranding (Changer la face de votre entreprise), Marketing (mise sur le marché de nouveau

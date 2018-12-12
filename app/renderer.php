@@ -10,8 +10,8 @@ use Jenssegers\Blade\Blade;
 class Renderer
 {
 
-    public static $viewsPath = '../resources/views/';
-    public static $cachePath = '../resources/cache/';
+    public static $viewsPath = __DIR__ . '/../resources/views/';
+    public static $cachePath = __DIR__ . '/../resources/cache/';
     public static $render;
 
 	/**

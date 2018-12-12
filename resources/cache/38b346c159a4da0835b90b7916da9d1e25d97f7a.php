@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>@yield('title')</title>
+    <title><?php echo $__env->yieldContent('title'); ?></title>
     <link rel="stylesheet" href="public/assets/css/normalize.css">
     <link rel="stylesheet" href="public/assets/css/skeleton.css">
     <link rel="stylesheet" href="public/assets/css/styles.css">
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-@section('sidebar')
+<?php $__env->startSection('sidebar'); ?>
 
     <header class="desktop row" id="header">
 
@@ -39,8 +39,8 @@
 
             <div>
 
-                <h1 class="title">@yield('page-title')</h1>
-                <h5>@yield('subtitle')</h5>
+                <h1 class="title"><?php echo $__env->yieldContent('page-title'); ?></h1>
+                <h5><?php echo $__env->yieldContent('subtitle'); ?></h5>
 
                 <div class="email">
                     <form action="#" method="post" class="row">
@@ -65,10 +65,10 @@
 
     </header>
 
-@show
+<?php echo $__env->yieldSection(); ?>
 
 <div class="content">
-    @yield('content')
+    <?php echo $__env->yieldContent('content'); ?>
 </div>
 
 <div class="footer">
