@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07d91f39-2cba-4d63-be7c-faf49d473dff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/owl.carousel.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/owl.theme.default.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/headroom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.headroom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/owl.carousel.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/cache/13b6a31650202f525fe6f5eede675efd0c3d4bba.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/cache/339926b1e87f5198b95ec90fa3eb9d126a8b9e70.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/cache/38b346c159a4da0835b90b7916da9d1e25d97f7a.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/cache/38b346c159a4da0835b90b7916da9d1e25d97f7a.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/cache/56f3a25c11d683ebd795064777b465470ecb6497.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/cache/8d44b2fa466643ac831d900d17dd263d36d690a8.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/cache/9534dca1798e4a1db4dfcef0e6d9ce4ce1863145.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/public/assets/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -49,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="575">
+              <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -172,12 +159,12 @@
       <workItem from="1544592841159" duration="19026000" />
       <workItem from="1544649719914" duration="2779000" />
       <workItem from="1544659708050" duration="142000" />
-      <workItem from="1544663158565" duration="118000" />
+      <workItem from="1544663158565" duration="286000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23648000" />
+    <option name="totallyTimeSpent" value="23816000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1288" y="-264" width="1296" height="1010" extended-state="6" />
@@ -302,13 +289,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2875">
@@ -316,10 +296,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="575">
+          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
         </state>
       </provider>
     </entry>
