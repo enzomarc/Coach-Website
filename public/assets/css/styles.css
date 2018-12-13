@@ -172,7 +172,7 @@ header.desktop div.container div.socials a i:hover {
 /* Mobile Styles */
 
 header.mobile div.left-side nav  {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: #222;
@@ -200,7 +200,7 @@ header.mobile div.left-side {
 
 header.mobile div.left-side a#menu-btn {
     z-index: 10;
-    margin: 8rem 8rem 0 0;
+    margin: 10rem 8rem 0 0;
     text-decoration: none;
     color: #eee;
 }
@@ -283,6 +283,10 @@ header.mobile div.container div.socials a i:hover {
     color: #D26B36;
 }
 
+a#last-social {
+    margin-right: 0;
+}
+
 /* End Mobile */
 
 div#side11 {
@@ -323,7 +327,6 @@ div.section div#main {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
 }
 
 div.section div#main div.shadow {
@@ -416,4 +419,107 @@ div.section div#main div.packages div.package p {
     margin-bottom: 2px;
     font-weight: 600;
     font-size: 12px;
+}
+
+/* Mobile Content Styles */
+
+div#container.mobile div.section div#top {
+    height: 20%;
+}
+
+div#container.mobile div.section div#top h5 {
+    font-size: 6em;
+    margin-top: 13%;
+}
+
+div#container.mobile div.section div#top h6, div#container.mobile div#top hr {
+    display: none;
+}
+
+div#container.mobile div.section div#main div.shadow {
+    display: flex;
+    flex-direction: column;
+    font-size: 2.8em;
+}
+
+div#container.mobile div.section div#main div.shadow div.four {
+    text-align: center;
+    margin: 0;
+}
+
+div#container.mobile div.section div#main div.shadow div.eight, div#container.mobile div.section div#main div.shadow div.four {
+    width: 100%;
+}
+
+div#container.mobile div.section div#main div.shadow div.eight p {
+    font-size: .9em;
+    text-align: justify;
+}
+
+div#container.mobile div.section div#main div.shadow div.four a#suscribe1,
+div#container.mobile div.section div#main div.shadow div.four a#suscribe2,
+div#container.mobile div.section div#main div.shadow div.four a#suscribe3,
+div#container.mobile div.section div#main div.shadow div.four a#suscribe4 {
+    margin: 7% 0 0 5%;
+    padding: 1em 1em 2.2em 1em;
+    font-size: .6em;
+}
+
+div#container.mobile div.section div#main div.shadow div.four a#suscribe2 {
+    margin-top: 7%;
+    width: 60%;
+}
+
+div#container.mobile div.section div#main div.shadow div.four a#suscribe3 {
+    margin: 2% 0 0 5%;
+    width: 60%;
+}
+
+div#container.mobile div.section div#main div.shadow div.four a#suscribe4 {
+    margin: 5% 0 0 0;
+}
+
+div#container.mobile div.section div#main div.shadow div.eight {
+    margin: 0;
+    padding: 2%;
+}
+
+div#container.mobile div.section div#main div.shadow div.eight div.packages {
+    margin: 0;
+    position: relative;
+}
+div#container.mobile div.section div#main div.shadow div.eight div.packages h5 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+div#container.mobile div.section div#main div.shadow div.eight div.packages hr {
+    margin: 2% 0 5% 10%;
+}
+
+div#container.mobile div.section div#main div.shadow div.eight div.packages div.row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div#container.mobile div.section div#main div.shadow div.eight div.packages div.package {
+    text-align: center;
+    width: 80%;
+    margin: 2%;
+}
+
+div#container.mobile div.section div#main div.shadow div.eight div.packages div.package h6 {
+    font-size: 1.4em;
+    margin: 0;
+}
+
+div#container.mobile div.section div#main div.shadow div.eight div.packages div.package hr {
+    margin: 2%;
+}
+
+div#container.mobile div.section div#main div.shadow div.eight div.packages div.package p {
+    font-size: 1em;
+    font-weight: normal;
+    text-align: center;
 }

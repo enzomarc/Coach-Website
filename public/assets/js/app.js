@@ -1,15 +1,18 @@
 $(function () {
     
     // Device screen size
-    var screenWidth = window.outerWidth
+    var screenWidth = $(window).width()
     window.sr = ScrollReveal({ reset: false })
 
     var documentResized = function () {
+        alert(screenWidth)
+        if (screenWidth <= 1500) {
 
-        if (screenWidth <= 1000) {
             $('header').removeClass('desktop').addClass('mobile')
+            $('div#container').addClass('mobile')
         } else {
             $('header').removeClass('mobile').addClass('desktop')
+            $('div#container').removeClass('mobile')
         }
 
     }
@@ -75,7 +78,7 @@ $(function () {
         mobileFirst: true,
         pauseOnFocus: false,
         pauseOnHover: false,
-
+        adaptiveHeight: true,
     })
      
     sr.reveal('h1, div.right', {

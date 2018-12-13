@@ -49,12 +49,12 @@
                     </form>
                 </div>
 
-                <div class="socials row">
+                <div class="socials row u-full-width">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#" id="last-social"><i class="fab fa-youtube"></i></a>
                 </div>
 
             </div>
@@ -67,7 +67,7 @@
 
 <?php echo $__env->yieldSection(); ?>
 
-<div class="content">
+<div class="content" id="container">
     <?php echo $__env->yieldContent('content'); ?>
 </div>
 
