@@ -13,7 +13,7 @@ $(function () {
         }
 
     }
-
+    
     documentResized()
 
     $(window).resize(function () {
