@@ -1,11 +1,11 @@
 <html>
 <head>
     <title><?php echo $__env->yieldContent('title'); ?></title>
-    <link rel="stylesheet" href="public/assets/css/normalize.css">
-    <link rel="stylesheet" href="public/assets/css/skeleton.css">
-    <link rel="stylesheet" href="public/assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/skeleton.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 </head>
 <body>
 
@@ -15,7 +15,7 @@
 
         <div id="navbar">
 
-            <div class="right-side one column"><a href="#"><img src="public/assets/img/logo.png" alt="logo" id="logo"></a></div>
+            <div class="right-side one column"><a href="#"><img src="assets/img/logo.png" alt="logo" id="logo"></a></div>
 
             <div class="left-side eleven columns">
 
@@ -71,19 +71,11 @@
     <?php echo $__env->yieldContent('content'); ?>
 </div>
 
-<div class="footer">
-
-
-
-</div>
-
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script src="public/assets/js/jquery.headroom.js"></script>
-<script src="public/assets/js/headroom.js"></script>
-<script src="public/assets/js/parallax.js"></script>
-<script src="public/assets/js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="assets/js/parallax.js"></script>
+<script src="assets/js/app.js"></script>
 
 </body>
 </html>

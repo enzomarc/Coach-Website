@@ -1,8 +1,8 @@
 $(function () {
     
     // Device screen size
-    var screenWidth = window.outerWidth;
-    window.sr = ScrollReveal({ reset: false });
+    var screenWidth = window.outerWidth
+    window.sr = ScrollReveal({ reset: false })
 
     var documentResized = function () {
 
@@ -21,8 +21,6 @@ $(function () {
         documentResized()
     })
 
-    $('#navbar').headroom()
-
     $('a#menu-btn').click(function () {
         $('nav').slideDown(300)
         $('body').css('overflow-y', 'hidden')
@@ -34,37 +32,37 @@ $(function () {
     })
 
     $('header').parallax({
-        imageSrc: 'public/assets/img/bg.jpg',
+        imageSrc: 'assets/img/bg.jpg',
         speed: 0.5
     })
 
     $('div#teen-section div#main').parallax({
-        imageSrc: 'public/assets/img/bg3.jpg',
+        imageSrc: 'assets/img/bg3.jpg',
         speed: 0.5
     })
 
     $('div#adult-section div#main').parallax({
-        imageSrc: 'public/assets/img/bg4.jpg',
+        imageSrc: 'assets/img/bg4.jpg',
         speed: 0.5
     })
 
     $('div#company-section div#main').parallax({
-        imageSrc: 'public/assets/img/bg5.jpg',
+        imageSrc: 'assets/img/bg5.jpg',
         speed: 0.5
     })
 
     $('div#teen-section div.teen-top').parallax({
-        imageSrc: 'public/assets/img/teen-bg.png',
+        imageSrc: 'assets/img/teen-bg.png',
         speed: 0.6
     })
 
     $('div#adult-section div.adult-top').parallax({
-        imageSrc: 'public/assets/img/adult-bg.png',
+        imageSrc: 'assets/img/adult-bg.png',
         speed: 0.6
     })
 
     $('div#company-section div.company-top').parallax({
-        imageSrc: 'public/assets/img/company-bg.png',
+        imageSrc: 'assets/img/company-bg.png',
         speed: 0.6
     })
 
