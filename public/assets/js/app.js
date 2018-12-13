@@ -1,11 +1,11 @@
 $(function () {
     
     // Device screen size
-    var screenWidth = window.innerWidth
+    var screenWidth = window.outerWidth;
     window.sr = ScrollReveal({ reset: false });
 
     var documentResized = function () {
-        
+
         if (screenWidth <= 1000) {
             $('header').removeClass('desktop').addClass('mobile')
         } else {
@@ -13,7 +13,7 @@ $(function () {
         }
 
     }
-    
+
     documentResized()
 
     $(window).resize(function () {
