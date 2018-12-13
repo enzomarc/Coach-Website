@@ -23,7 +23,7 @@
 
                 <nav class="row u-full-width" id="navigation">
                     <ul class="u-full-width">
-                        <li><a href="#">Accueille</a></li>
+                        <li><a href="#">Accueil</a></li>
                         <li><a href="#">Services</a></li>
                         <li><a href="#">Produits</a></li>
                         <li><a href="#">Blog</a></li>
