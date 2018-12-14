@@ -9,6 +9,6 @@ Route::get('/', function () {
 	Renderer::render('services');
 })->name('home');
 
-Route::get('public', function () {
-    Renderer::render('services');
-})->name('services');
+Route::get('contact', function () {
+    echo "Contact page";
+});
