@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
 html, body {
     width: 100%;
@@ -55,9 +56,14 @@ header div.left-side nav {
 
 header div.container {
     z-index: 9;
-    color: #111;
-    font-family: 'Raleway';
-    top: 20%;
+    color: #272727;
+    top: 12%;
+    text-align: center;
+}
+
+header div.container h1 {
+    font-weight: 600;
+    font-size: 4em;
 }
 
 header div.right-side img#logo {
@@ -77,17 +83,18 @@ header div.left-side {
 
 header div.left-side nav ul li a {
     font-family: 'Source Sans Pro', 'Nunito', 'Muli', 'PT Sans', 'Raleway', 'sans-serif';
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 16px;
     text-decoration: none;
-    color: #111;
+    color: #272727;
     z-index: 10;
+    font-weight: 900;
 }
 
 header div.left-side nav ul li a:hover {
-    color: #eee;
-    border-bottom: solid 2px #eee;
+    color: #ED5453;
+    border-bottom: solid 2px #ED5453;
     z-index: 10;
+    padding-bottom: 10px;
 }
 
 /* Desktop Styles */
@@ -95,7 +102,7 @@ header div.left-side nav ul li a:hover {
 header.desktop div.left-side nav ul {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     z-index: 10;
 }
 
@@ -113,63 +120,104 @@ header.desktop div.left-side a#menu-btn {
 }
 
 header.desktop div.container div.email form input {
-    border-radius: 0;
+    border-radius: 500px;
     background: transparent;
-    border: solid 1px #333;
+    border: solid 1px #ccc;
     font-size: 12px;
     padding: 20px;
 }
 
-button, a.button {
-    border-radius: 0;
-    font-size: 11px;
-    font-weight: lighter;
-    text-transform: initial;
-    color: #eee;
-    background-image: linear-gradient(to left, #872906, #B45023);
+div#teen-section div#top {
+    background-image: url("../img/bg1.png");
+}
+
+div#company-section div#top {
+    background-image: url("../img/bg2.png");
+}
+
+div#adult-section div#top {
+    color: #333;
+    background-color: #FAFAFA;
+}
+
+div#adult-section div#top hr {
+    border-color: #aaa;
+}
+
+div#top {
+    color: #fff;
+}
+
+btn, a.btn {
+    padding: 15px;
+    border-radius: 500px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #272727;
+    background-color: #fff;
     margin-left: 1%;
     border: none;
     transition: all .5s;
+    box-shadow: 1px 1px 3px #ddd;
+    text-decoration: none;
 }
 
-button:hover, a.button:hover {
-    color: #eee;
-    background-image: linear-gradient(to left, #B45023, #872906);
+btn:hover, a.btn:hover {
+    color: #fff;
+    background-color: #ED5453;
     transition: all .5s;
 }
 
-button.transparent, a.button.transparent {
+btn.transparent, a.btn.transparent {
     background-color: transparent;
     background-image: none;
-    border: solid 1px #ccc;
+    border: solid 1px #B45023;
+    box-shadow: none;
+    color: #fff;
+    padding: 0 3%;
+    font-size: 10px;
 }
 
-button.transparent:hover, a.button.transparent:hover {
+btn.transparent:hover, a.btn.transparent:hover {
     background-color: #B45023;
 }
 
-header.desktop div.container div.email form button {
-    border-radius: 0;
-    font-size: 11px;
-    font-weight: lighter;
-    text-transform: initial;
-    color: #eee;
-    margin-left: 1%;
-    border: none;
-    transition: all .5s;
+header.desktop div.container div.email {
+
+}
+
+header.desktop div.container div.email form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header div.container div.email form input {
+    border-radius: 500px;
+    background: transparent;
+    border: solid 1px #272727;
+    font-size: 12px;
+    padding: 20px;
 }
 
 header.desktop div.container div.socials a {
     margin: 0 5% 0 0;
-    color: #eee;
+    color: #272727;
+    transition: all .3s;
 }
 
 header.desktop div.container div.socials a i {
     font-size: 18px;
 }
 
-header.desktop div.container div.socials a i:hover {
-    color: #D26B36;
+header.desktop div.container div.socials a:hover {
+    color: #ED5453;
+    transition: all .3s;
+}
+
+form a.btn {
+    margin: 1% 0 3% 0;
 }
 
 /* Mobile Styles */
@@ -313,6 +361,7 @@ div.section div#top {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    color: #FAFAFA;
 }
 
 div.section div#top h6 {
@@ -320,8 +369,8 @@ div.section div#top h6 {
 }
 
 div.section div#top hr {
-    width: 7%;
-    border: solid 1px #ccc;
+    width: 3%;
+    border: solid 1px #FAFAFA;
     margin-top: 1em;
     margin-bottom: 1.5em;
 }

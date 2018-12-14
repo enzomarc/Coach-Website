@@ -65,7 +65,7 @@ $(function () {
         adaptiveHeight: true,
     })
      
-    sr.reveal('h1, div.right', {
+    sr.reveal('div.right', {
         origin: 'right',
         duration: 1000,
         delay: 200,
@@ -97,7 +97,7 @@ $(function () {
         mobile: true
     })
 
-    sr.reveal('input#email, div#main div.left', {
+    sr.reveal('div#main div.left', {
         origin: 'left',
         duration: 1000,
         delay: 200,
@@ -105,11 +105,19 @@ $(function () {
         mobile: true
     })
 
-    sr.reveal('button#submit, div.socials, h5, div#side11', {
+    sr.reveal('button#submit, div#side11', {
         origin: 'bottom',
         duration: 1000,
         delay: 200,
         distance: '50%',
+        mobile: true
+    })
+
+    sr.reveal('div.container div', {
+        origin: 'bottom',
+        duration: 1000,
+        delay: 500,
+        distance: '150%',
         mobile: true
     })
 

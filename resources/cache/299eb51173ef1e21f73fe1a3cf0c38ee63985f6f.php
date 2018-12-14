@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="four columns">
-                    <a href="#" class="button transparent" id="suscribe1">Réserver le prochain séminaire</a>
+                    <a href="#" class="btn button transparent" id="suscribe1">Réserver le prochain séminaire</a>
                 </div>
 
             </div>
@@ -65,8 +65,8 @@
             <div class="shadow row">
 
                 <div class="four columns">
-                    <a href="#" class="button transparent" id="suscribe2">Réserver le prochain séminaire</a>
-                    <a href="#" class="button transparent" id="suscribe3">Réserver une séance gratuite de coaching</a>
+                    <a href="#" class="btn button transparent" id="suscribe2">Réserver le prochain séminaire</a>
+                    <a href="#" class="btn button transparent" id="suscribe3">Réserver une séance gratuite de coaching</a>
                 </div>
 
                 <div class="eight columns right">
@@ -149,7 +149,7 @@
                 </div>
 
                 <div class="four columns">
-                    <a href="#" class="button transparent" id="suscribe4">Réserver une séance découverte pour votre entreprise</a>
+                    <a href="#" class="btn button transparent" id="suscribe4">Réserver une séance découverte pour votre entreprise</a>
                 </div>
 
             </div>

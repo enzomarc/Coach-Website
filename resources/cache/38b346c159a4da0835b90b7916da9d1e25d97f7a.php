@@ -45,7 +45,7 @@
                 <div class="email">
                     <form action="#" method="post" class="row">
                         <input class="five columns" type="email" name="email" id="email" placeholder="Votre adresse e-mail">
-                        <button class="three columns" type="submit" id="submit">Obtenez le livre gratuit</button>
+                        <a class="btn three columns" href="#" type="submit" id="submit">Obtenez le livre gratuit</a>
                     </form>
                 </div>
 
