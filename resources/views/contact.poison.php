@@ -12,7 +12,7 @@ $content = "
             
             <form action='' method='POST'>
                 <input type='email' name='email' id='email' placeholder='Votre adresse email'>
-                <textarea name='mail' id='mail' cols='30' rows='50' placeholder='Comment pouvous nous vous aider ?'></textarea>
+                <textarea name='mail' id='mail' cols='30' rows='50' placeholder='Comment pouvons nous vous aider ?'></textarea>
                 <button class='btn' type='submit'>Envoyer</button>
             </form>
         
