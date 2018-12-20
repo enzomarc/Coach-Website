@@ -12,4 +12,4 @@ $router->get('/', function () use($poison) {
 
 $router->get('/contact', function () use($poison) {
     $poison->render('contact');
-});
+})->name('contact');

@@ -1,0 +1,12 @@
+Options -Indexes +FollowSymLinks -Multiviews
+RewriteEngine On
+
+# externally redirect, must match against %{THE_REQUEST}
+RewriteCond %{THE_REQUEST} ^(GET|HEAD|POST)\ /public/
+RewriteRule ^/?public/index.php(.*)$ /$1 [L,R=301]
+
+# internally rewrite it back, but we must first check that it's pointing to a valid resource:
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -d [OR]
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -s
+RewriteRule ^(.*)$ /public/index.php?url=$1 [L]

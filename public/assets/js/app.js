@@ -34,22 +34,22 @@ $(function () {
     })
 
     $('header').parallax({
-        imageSrc: 'assets/img/bg.jpg',
+        imageSrc: 'public/assets/img/bg.jpg',
         speed: 0.5
     })
 
     $('div#teen-section div#main').parallax({
-        imageSrc: 'assets/img/bg3.jpg',
+        imageSrc: 'public/assets/img/bg3.jpg',
         speed: 0.5
     })
 
     $('div#adult-section div#main').parallax({
-        imageSrc: 'assets/img/bg4.jpg',
+        imageSrc: 'public/assets/img/bg4.jpg',
         speed: 0.5
     })
 
     $('div#company-section div#main').parallax({
-        imageSrc: 'assets/img/bg5.jpg',
+        imageSrc: 'public/assets/img/bg5.jpg',
         speed: 0.5
     })
 
@@ -113,7 +113,7 @@ $(function () {
         mobile: true
     })
 
-    sr.reveal('div.container div', {
+    sr.reveal('div.container div.main-page', {
         origin: 'bottom',
         duration: 1000,
         delay: 500,
