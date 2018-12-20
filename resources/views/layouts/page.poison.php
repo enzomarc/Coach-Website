@@ -25,7 +25,7 @@
                     <li><a href="#">Accueil</a></li>
                     <li><a href="<?= $router->url('services') ?>">Services</a></li>
                     <li><a href="<?= $router->url('products') ?>">Produits</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="https://medium.com/@heatherpicken">Blog</a></li>
                     <li><a href="<?= $router->url('contact') ?>">Contact</a></li>
                     <li id="back-btn"><a href="#"><i class="fas fa-chevron-left"></i>Back</a></li>
                 </ul>
@@ -69,7 +69,7 @@
                 <li><a href="#">Accueil</a></li>
                 <li><a href="<?= $router->url('services') ?>">Services</a></li>
                 <li><a href="<?= $router->url('products') ?>">Produits</a></li>
-                <li><a href="#">Blog</a></li>
+                <li><a href="https://medium.com/@heatherpicken">Blog</a></li>
                 <li><a href="<?= $router->url('contact') ?>">Contact</a></li>
             </ul>
         </div>
