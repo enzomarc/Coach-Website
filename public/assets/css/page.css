@@ -100,3 +100,35 @@ div.contact-section div.row div.info a {
 header#page-header {
     background-image: url("../img/bg.jpg");
 }
+
+div.product-section iframe {
+    width: 100%;
+}
+
+div.product-section h4 {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+div.product-section div.socials {
+    margin: 6% 0;
+}
+
+div.product-section a.btn {
+    margin-left: 0;
+}
+
+div.product-section div.socials a {
+    margin: 0 5% 0 0;
+    color: #272727;
+    transition: all .3s;
+}
+
+div.product-section div.socials a:hover {
+    color: #ED5453;
+    transition: all .3s;
+}
+
+div.product-section div.socials a i {
+    font-size: 18px;
+}
