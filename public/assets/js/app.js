@@ -33,7 +33,7 @@ $(function () {
         $('body').css('overflow-y', 'auto')
     })
 
-    $('header').parallax({
+    $('header#header').parallax({
         imageSrc: 'public/assets/img/bg.jpg',
         speed: 0.5
     })
