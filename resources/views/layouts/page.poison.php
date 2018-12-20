@@ -10,7 +10,7 @@
 </head>
 <body style="width: 100%">
 
-<header class="desktop row" id="page-header">
+<header class="desktop row" id="<?= $id ?>">
 
     <div id="navbar">
 

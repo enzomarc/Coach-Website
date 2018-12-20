@@ -23,7 +23,7 @@ $content = "
         </div>
         
         <div class='six columns'>
-            <iframe id='player' type='text/html' width='640' height='360' src='http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://coachwebsite.com' frameborder='0'></iframe>
+            <iframe id='player' type='text/html' width='640' height='360' src='http://www.youtube.com/embed/g7cPJu42IEM?enablejsapi=1&origin=http://coachwebsite.com' frameborder='0'></iframe>
         </div>
         
     </div>
@@ -32,5 +32,5 @@ $content = "
 
 ";
 
-$poison->render('layouts/page', ['title' => "Coach - Produits", 'page_title' => "Produits", 'content' => $content]);
+$poison->render('layouts/page', ['title' => "Coach - Produits", 'page_title' => "Produits", 'id' => "products-header", 'content' => $content]);
 

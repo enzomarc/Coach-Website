@@ -49,5 +49,5 @@ $content = "
 
 ";
 
-$poison->render('layouts/page', ['title' => "Coach - Contact", 'page_title' => "Contact", 'content' => $content]);
+$poison->render('layouts/page', ['title' => "Coach - Contact", 'page_title' => "Contact", 'id' => "contact-header", 'content' => $content]);
 

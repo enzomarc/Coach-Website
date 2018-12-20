@@ -97,8 +97,12 @@ div.contact-section div.row div.info a {
     color: #ED5453;
 }
 
-header#page-header {
-    background-image: url("../img/bg.jpg");
+header#contact-header {
+    background-image: url("../img/contact.jpg");
+}
+
+header#products-header {
+    background-image: url("../img/products.jpg");
 }
 
 div.product-section iframe {
