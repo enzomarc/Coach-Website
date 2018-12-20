@@ -1,14 +1,15 @@
 <?php
 
-require_once __DIR__ . '/../app/helpers.php';
+use App\Poison;
 
-use Pecee\SimpleRouter\SimpleRouter as Route;
-use App\Renderer;
+$poison = new Poison(dirname(__DIR__) . '/resources/views');
 
-Route::get('/', function () {
-	Renderer::render('services');
-})->name('home');
+$poison->addGlobal('router', $router);
 
-Route::get('contact', function () {
-    echo "Contact page";
+$router->get('/', function () use($poison) {
+    $poison->render('services');
+});
+
+$router->get('/contact', function () use($poison) {
+    $poison->render('contact');
 });

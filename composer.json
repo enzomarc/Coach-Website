@@ -1,8 +1,6 @@
 {
     "name": "focus237/coach-website",
     "require": {
-        "pecee/simple-router": "4.2.0.6",
-        "jenssegers/blade": "^1.1"
     },
     "authors": [
         {

@@ -2,9 +2,7 @@
 
 namespace App;
 
-require_once __DIR__ . '/../routes/web.php';
-
-use Pecee\SimpleRouter\SimpleRouter;
+use App\Router\Router;
 
 /**
  * Represent the application
@@ -14,12 +12,17 @@ class App
 {
 
 	private $modules = [];
+	private $globals = [];
 
 	function __construct(array $modules = [])
 	{
 		foreach ($modules as $module) {
 			$this->modules[] = $module;
 		}
+
+		$this->globals['router'] = new Router();
+		extract($this->globals);
+        require_once __DIR__ . '/../routes/web.php';
 	}
 
 	/**
@@ -27,7 +30,7 @@ class App
 	 */
 	public function run()
 	{
-		SimpleRouter::start();
+        $this->globals['router']->run();
 	}
 
 }
