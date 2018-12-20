@@ -2,6 +2,95 @@ header {
     height: 40%;
 }
 
+div.container.main-carousel div.simple-page h1 {
+    font-size: 45px;
+    letter-spacing: -0.6px;
+    line-height: 1.16em;
+    font-weight: 7900;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    font-family: "Source Sans Pro",sans-serif;
+}
+
 div.container.main-carousel div.simple-page div.socials {
     margin-top: 3%;
+}
+
+div.contact-section {
+    padding: 5%;
+}
+
+div.contact-section div.row {
+    border: solid 1px #eee;
+}
+
+div.contact-section div.row div.columns:first-child {
+    text-align: center;
+}
+
+div.contact-section div.row div.columns:first-child h5 {
+    text-transform: capitalize;
+}
+
+div.contact-section div.row div.columns:last-child {
+    border-left: solid 1px #eee;
+    margin: 0;
+    padding: 10%;
+}
+
+div.contact-section div.row form {
+    display: flex;
+    flex-direction: column;
+}
+
+div.contact-section div.row form input {
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.6923;
+    padding: 25px 28px;
+}
+
+div.contact-section div.row form textarea {
+    min-height: 199px;
+    padding: 25px 28px;
+    font-size: 15px;
+    line-height: 1.8em;
+    margin-bottom: 3rem;
+}
+
+div.contact-section div.row form button {
+    padding: 0;
+}
+
+div.contact-section div.row div.six {
+    padding: 5%;
+}
+
+div.contact-section div.row div.info {
+    margin-bottom: 5%;
+}
+
+div.contact-section div.row div.info i {
+    font-size: 1.3em;
+}
+
+div.contact-section div.row div.info h5 {
+    display: inline-block;
+    font-size: 1.4em;
+    margin-left: 3.5%;
+}
+
+div.contact-section div.row div.info p, div.contact-section div.row div.info a {
+    font-size: 1.1em;
+    line-height: 1.666667;
+    color: #888;
+    margin-left: 9%;
+}
+
+div.contact-section div.row div.info a {
+    display: block;
+    margin-bottom: 2.5rem;
+    text-decoration: none;
+    color: #1EAEDB;
 }

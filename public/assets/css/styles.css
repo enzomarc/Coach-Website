@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700');
 
 html, body {
     width: 100%;
@@ -148,7 +148,7 @@ div#top {
     color: #fff;
 }
 
-btn, a.btn {
+.btn, a.btn {
     padding: 15px;
     border-radius: 500px;
     font-size: 12px;
@@ -163,7 +163,7 @@ btn, a.btn {
     text-decoration: none;
 }
 
-btn:hover, a.btn:hover {
+.btn:hover, a.btn:hover {
     color: #fff;
     background-color: #ED5453;
     transition: all .5s;
@@ -179,12 +179,8 @@ btn.transparent, a.btn.transparent {
     font-size: 10px;
 }
 
-btn.transparent:hover, a.btn.transparent:hover {
+.btn.transparent:hover, a.btn.transparent:hover {
     background-color: #B45023;
-}
-
-header.desktop div.container div.email {
-
 }
 
 header.desktop div.container div.email form {
