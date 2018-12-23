@@ -2,7 +2,7 @@
 <head>
     <title><?= $title ?></title>
     <?= $poison->include('partials.assets_css') ?>
-    <link rel="stylesheet" href="assets/css/page.css">
+    <link rel="stylesheet" href="public/assets/css/page.css">
 </head>
 <body style="width: 100%">
 
