@@ -61,16 +61,25 @@ class Router
         throw new RouterException('No matching routes');
     }
 
-    public function url(string $name, array $params = []) : string
+    public function url(string $name, array $params = []): string
     {
         if (!isset($this->namedRoutes[$name])) {
-            throw new RouterException('No route matches this name');
+            throw new RouterException('No route matches this name ' . $name);
         }
 
         return $this->namedRoutes[$name]->getUrl($params);
     }
 
-    public static function setDefaultNamespace(string $namespace) : void
+    public function redirect(string $name, array $params = []): void
+    {
+        if (!isset($this->namedRoutes[$name])) {
+            throw new RouterException('No route matches this name ' . $name);
+        }
+
+        header('location: ' . $this->namedRoutes[$name]->getUrl($params));
+    }
+
+    public static function setDefaultNamespace(string $namespace): void
     {
         self::$controllersPath = $namespace;
     }

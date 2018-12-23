@@ -30,6 +30,10 @@ header div.shadow {
     z-index: 0;
 }
 
+header div.email form button {
+    padding: 0;
+}
+
 div.body {
     margin: 0;
     padding: 0;

@@ -52,13 +52,17 @@ class Poison
      */
     public function render(string $view, array $params = []): void
     {
+        $view = str_replace('.', DIRECTORY_SEPARATOR, $view);
         $path = self::$viewsPath . DIRECTORY_SEPARATOR . $view . self::$viewExtension;
-         ob_start();
-         $poison = $this;
-         extract($this->globals);
-         extract($params);
-         require($path);
-         echo ob_get_clean();
+
+        ob_start();
+
+        extract($this->globals);
+        extract($params);
+
+        require($path);
+
+        echo ob_get_clean();
     }
 
     /**
@@ -69,6 +73,17 @@ class Poison
     public function addGlobal(string $key, $value): void
     {
         $this->globals[$key] = $value;
+    }
+
+    public function include(string $file): void
+    {
+        $file = str_replace('.', DIRECTORY_SEPARATOR, $file);
+        $path = self::$viewsPath . DIRECTORY_SEPARATOR . $file . self::$viewExtension;
+
+        ob_start();
+        extract($this->globals);
+        require($path);
+        echo ob_get_clean();
     }
 
 }

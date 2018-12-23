@@ -1,31 +1,18 @@
 <?php
 
 use App\Poison;
+use App\Router\Router;
+
+$router = $GLOBALS['router'];
 
 require_once '../app/helpers.php';
 
-$poison = new Poison(dirname(__DIR__) . '/resources/views');
+$router->get('/', 'PagesController@index')->name('home');
 
-Poison::setViewExtension('.poison.php');
+$router->get('/services', 'PagesController@services')->name('services');
 
-$poison->addGlobal('router', $router);
+$router->get('/products', 'PagesController@products')->name('products');
 
-$router->get('/', function () use($poison) {
-    $poison->render('services');
-})->name('home');
+$router->get('/contact', 'PagesController@contact')->name('contact');
 
-$router->get('/services', function () use($poison) {
-    $poison->render('services');
-})->name('services');
-
-$router->get('/products', function () use($poison) {
-    $poison->render('products');
-})->name('products');
-
-$router->get('/contact', function () use($poison) {
-    $poison->render('contact');
-})->name('contact');
-
-$router->post('/contact', function () {
-    var_dump(input());
-});
+$router->post('/newsletter', 'NewsletterController@addMail')->name('newsletter.add');

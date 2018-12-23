@@ -22,15 +22,10 @@ class Database {
      * @param string $server Database server
      * @return PDO
      */
-    public static function GetDB(
-        string $dbname = 'AutoGest', 
-        string $dbuser = 'root', 
-        string $dbpassword = 'rooter', 
-        string $server = 'localhost'
-        ) : PDO
+    public static function GetDB(string $dbname = 'coachwebsite', string $dbuser = 'root', string $dbpassword = '', string $server = 'localhost'): PDO
     {
         if (!isset(self::$db))
-            $db = new PDO('mysql:host=' . $server . '; dbname=' . $dbname . '; charset=utf8', $dbuser, '');
+            $db = new PDO('mysql:host=' . $server . '; dbname=' . $dbname . '; charset=utf8', $dbuser, $dbpassword);
         return $db;
     }
 
