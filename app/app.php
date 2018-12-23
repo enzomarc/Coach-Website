@@ -6,7 +6,8 @@ use App\Router\Router;
 
 const DEFAULT_NAMESPACE = "App\\Controllers\\";
 const VIEW_EXTENSION = '.poison.php';
-const VIEWS_PATH =  '../resources/views';
+const VIEWS_PATH =  __DIR__ . '/../resources/views';
+const CACHE_PATH = __DIR__ . '/../resources/cache';
 
 /**
  * Represent the application
@@ -22,7 +23,7 @@ class App
 	{
 	    /* Initialize GLOBALS variables */
 		$GLOBALS['router'] = new Router();
-		$GLOBALS['poison'] = new Poison(VIEWS_PATH);
+		$GLOBALS['poison'] = new Poison(VIEWS_PATH, CACHE_PATH);
 
 		$GLOBALS['poison']->addGlobal('router', $GLOBALS['router']);
 		$GLOBALS['poison']->addGlobal('poison', $GLOBALS['poison']);

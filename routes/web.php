@@ -5,7 +5,7 @@ use App\Router\Router;
 
 $router = $GLOBALS['router'];
 
-require_once '../app/helpers.php';
+require_once dirname(__DIR__) . '/app/helpers.php';
 
 $router->get('/', 'PagesController@index')->name('home');
 

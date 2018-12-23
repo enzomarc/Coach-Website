@@ -1,9 +1,23 @@
 <html>
 <head>
-    <title><?= $title ?></title>
-    <?= $poison->include('partials.assets_css') ?>
+    <title>{{ $title }}</title>
+    @include('partials.assets_css')
 </head>
 <body style="width: 100%">
+
+{? $items = ["Item #1", "Item #2", "Item #3"] /?}
+
+<ul>
+    @foreach($items as $item)
+        <li>{{ $item }}</li>
+    @endforeach
+</ul>
+
+@if(count($items) > 2)
+    {{ "We have more than 02 items" }}
+@else
+    {{ "We have less than 02 items" }}
+@endif
 
 <header class="desktop row" id="header">
 
@@ -18,7 +32,7 @@
             <nav class="row u-full-width" id="navigation">
                 <ul class="u-full-width">
                     <li><a href="#">Accueil</a></li>
-                    <li><a href="<?= $router->url('services') ?>">Services</a></li>
+                    <li><a href="@url('services')">Services</a></li>
                     <li><a href="<?= $router->url('products') ?>">Produits</a></li>
                     <li><a href="https://medium.com/@heatherpicken">Blog</a></li>
                     <li><a href="<?= $router->url('contact') ?>">Contact</a></li>
@@ -61,11 +75,11 @@
 </header>
 
 <div class="content" id="container">
-    <?= html_entity_decode($content) ?>
+    {{ html_entity_decode($content) }}
 </div>
 
-<?= $poison->include('partials.footer') ?>
-<?= $poison->include('partials.assets_js') ?>
+<!-- @include('partials.footer') -->
+@include('partials.assets_js')
 
 </body>
 </html>
