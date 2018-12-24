@@ -4,10 +4,10 @@
         <div class="four columns">
             <ul>
                 <li><a href="#">Accueil</a></li>
-                <li><a href="<?= $router->url('services') ?>">Services</a></li>
-                <li><a href="<?= $router->url('products') ?>">Produits</a></li>
+                <li><a href="@url('services')">Services</a></li>
+                <li><a href="@url('products')">Produits</a></li>
                 <li><a href="https://medium.com/@heatherpicken">Blog</a></li>
-                <li><a href="<?= $router->url('contact') ?>">Contact</a></li>
+                <li><a href="@url('contact')">Contact</a></li>
             </ul>
         </div>
 

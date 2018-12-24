@@ -7,7 +7,7 @@ $(function () {
 
     var documentResized = function () {
 
-        $('header').css('height', screenHeight)
+        $('header#header').css('height', screenHeight)
 
         if (screenWidth <= 1080) {
             $('header').removeClass('desktop').addClass('mobile')

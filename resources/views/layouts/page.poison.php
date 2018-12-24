@@ -1,12 +1,12 @@
 <html>
 <head>
     <title><?= $title ?></title>
-    <?= $poison->include('partials.assets_css') ?>
+    @include('partials.assets_css')
     <link rel="stylesheet" href="public/assets/css/page.css">
 </head>
 <body style="width: 100%">
 
-<header class="desktop row" id="<?= $id ?>">
+<header class="desktop row" id="{{ $id }}">
 
     <div id="navbar">
 
@@ -19,10 +19,10 @@
             <nav class="row u-full-width" id="navigation">
                 <ul class="u-full-width">
                     <li><a href="#">Accueil</a></li>
-                    <li><a href="<?= $router->url('services') ?>">Services</a></li>
-                    <li><a href="<?= $router->url('products') ?>">Produits</a></li>
+                    <li><a href="@url('services')">Services</a></li>
+                    <li><a href="@url('products')">Produits</a></li>
                     <li><a href="https://medium.com/@heatherpicken">Blog</a></li>
-                    <li><a href="<?= $router->url('contact') ?>">Contact</a></li>
+                    <li><a href="@url('contact')">Contact</a></li>
                     <li id="back-btn"><a href="#"><i class="fas fa-chevron-left"></i>Back</a></li>
                 </ul>
             </nav>
@@ -35,7 +35,7 @@
 
         <div class="simple-page">
 
-            <h1 class="title"><?= $page_title ?></h1>
+            <h1 class="title">{{ $page_title }}</h1>
 
             <div class="socials row u-full-width">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -54,11 +54,11 @@
 </header>
 
 <div class="content" id="container">
-    <?= html_entity_decode($content) ?>
+    {{ $content }}
 </div>
 
-<?= $poison->include('partials.footer') ?>
-<?= $poison->include('partials.assets_js') ?>
+@include('partials.footer')
+@include('partials.assets_js')
 
 </body>
 </html>
