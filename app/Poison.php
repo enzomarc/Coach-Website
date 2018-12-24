@@ -107,6 +107,18 @@ class Poison
             $real = str_replace("@endif", "<?php endif; ?>", $tag);
         }
 
+        if (startsWith($tag, '{?')) {
+            $real = str_replace("{?", "<?php", $tag);
+        }
+
+        if (startsWith($tag, '{?')) {
+            $real = str_replace("{?", "<?php", $tag);
+        }
+
+        if (startsWith($tag, '?}')) {
+            $real = str_replace("?}", "?>", $tag);
+        }
+
         /*
         if (startsWith($tag, '@style')) {
             $tag = str_replace('.', DIRECTORY_SEPARATOR, $tag);
@@ -137,7 +149,7 @@ class Poison
             # On vérifie le début du tag pour savoir ce qu'il est sensé faire
             # On appelle la fonction réelle à la place du tag en lui passant les paramètres
 
-        preg_match_all("#(@(\w*)\s?)?(\({1}(.*){1,}\){1})*|(\{{2}(.*){1,}\}{2})#", $contents, $matches);
+        preg_match_all("#(\{[@?!])(.*){1,}([@?!]\})|(\@\w+)([\(](.+)[\)])|(\{{2}(.*){1,}\}{2})|(\{[@?!]+)|([@?!]+\})#imxU", $contents, $matches);
 
         if (count($matches) > 0)
         {

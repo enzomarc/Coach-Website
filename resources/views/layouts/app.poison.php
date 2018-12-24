@@ -1,23 +1,10 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
     <title>{{ $title }}</title>
     @include('partials.assets_css')
 </head>
 <body style="width: 100%">
-
-{? $items = ["Item #1", "Item #2", "Item #3"] /?}
-
-<ul>
-    @foreach($items as $item)
-        <li>{{ $item }}</li>
-    @endforeach
-</ul>
-
-@if(count($items) > 2)
-    {{ "We have more than 02 items" }}
-@else
-    {{ "We have less than 02 items" }}
-@endif
 
 <header class="desktop row" id="header">
 
@@ -33,9 +20,9 @@
                 <ul class="u-full-width">
                     <li><a href="#">Accueil</a></li>
                     <li><a href="@url('services')">Services</a></li>
-                    <li><a href="<?= $router->url('products') ?>">Produits</a></li>
+                    <li><a href="@url('products')">Produits</a></li>
                     <li><a href="https://medium.com/@heatherpicken">Blog</a></li>
-                    <li><a href="<?= $router->url('contact') ?>">Contact</a></li>
+                    <li><a href="@url('contact')">Contact</a></li>
                     <li id="back-btn"><a href="#"><i class="fas fa-chevron-left"></i>Back</a></li>
                 </ul>
             </nav>
@@ -48,11 +35,11 @@
 
         <div class="main-page">
 
-            <h1 class="title"><?= $page_title ?></h1>
-            <h5><?= $subtitle ?></h5>
+            <h1 class="title">{{ $page_title }}</h1>
+            <h5>{{ $subtitle }}</h5>
 
             <div class="email">
-                <form action="<?= $router->url('newsletter.add') ?>" method="post" class="row">
+                <form action="@url('newsletter.add')" method="post" class="row">
                     <input class="five columns" type="email" name="email" id="email" placeholder="Votre adresse e-mail">
                     <button class="btn three columns" href="#" type="submit" id="submit">Obtenez le livre gratuit</button>
                 </form>
@@ -75,10 +62,10 @@
 </header>
 
 <div class="content" id="container">
-    {{ html_entity_decode($content) }}
+    {{ $content }}
 </div>
 
-<!-- @include('partials.footer') -->
+@include('partials.footer')
 @include('partials.assets_js')
 
 </body>

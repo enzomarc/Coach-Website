@@ -26,7 +26,7 @@
 
         <div class="four columns">
             <h5>NEWSLETTER</h5>
-            <form action="<?= $router->url('newsletter.add') ?>" method="POST">
+            <form action="@url('newsletter.add')" method="POST">
                 <input type="email" name="email" id="email" placeholder="email@example.com">
                 <button class="btn" type="submit">S'INSCRIRE</button>
             </form>

@@ -2,9 +2,12 @@ $(function () {
     
     // Device screen size
     var screenWidth = $(window).width()
+    var screenHeight = $(window).height()
     window.sr = ScrollReveal({ reset: false })
 
     var documentResized = function () {
+
+        $('header').css('height', screenHeight)
 
         if (screenWidth <= 1080) {
             $('header').removeClass('desktop').addClass('mobile')
