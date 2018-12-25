@@ -1,6 +1,6 @@
-<?php
+@extend('layouts/app', ['title' => "Coach - Services", 'page_title' => "Services", 'subtitle' => "Que puis-je faire pour vous ?"])
 
-$content = "
+@content
 
 <div class='section' id='teen-section'>
 
@@ -39,7 +39,7 @@ $content = "
             </div>
 
             <div class='four columns'>
-                <a href='#' class='btn button transparent' id='suscribe1'>Réserver le prochain séminaire</a>
+                <a href="@url('reservation.student')" class='btn button transparent' id='suscribe1'>Réserver le prochain séminaire</a>
             </div>
 
         </div>
@@ -151,6 +151,4 @@ $content = "
 
 </div>
 
-";
-
-$poison->render('layouts/app', ['title' => "Coach - Services", 'page_title' => "Services", 'subtitle' => "Que puis-je faire pour vous ?", 'content' => $content]);
+@endcontent

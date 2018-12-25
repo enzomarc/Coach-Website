@@ -1,6 +1,6 @@
-<?php
+@extend('layouts/page', ['title' => "Coach - Contact", 'page_title' => "Contact", 'id' => "contact-header"])
 
-$content = "
+@content
 
 <div class='contact-section'>
 
@@ -10,9 +10,9 @@ $content = "
         
             <h5>Laissez nous un message</h5>
             
-            <form action='' method='POST'>
+            <form action="@url('message.add')" method='POST'>
                 <input type='email' name='email' id='email' placeholder='Votre adresse email'>
-                <textarea name='mail' id='mail' cols='30' rows='50' placeholder='Comment pouvons nous vous aider ?'></textarea>
+                <textarea name='message' id='message' cols='30' rows='50' placeholder='Comment pouvons nous vous aider ?'></textarea>
                 <button class='btn' type='submit'>Envoyer</button>
             </form>
         
@@ -47,7 +47,4 @@ $content = "
 
 </div>
 
-";
-
-$poison->render('layouts/page', ['title' => "Coach - Contact", 'page_title' => "Contact", 'id' => "contact-header", 'content' => $content]);
-
+@endcontent

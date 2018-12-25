@@ -5,12 +5,20 @@
  * @param string|null $key Data to get from inputs, leave blank to get all inputs
  * @return mixed
  */
-function input(string $key = null)
+function input($keys = null)
 {
-    if (is_null($key))
+    if (is_null($keys))
         return $_POST;
 
-    return $_POST[$key];
+    $datas = [];
+
+    if (is_array($keys)) {
+        foreach ($keys as $key) {
+            $datas[$key] = $_POST[$key];
+        }
+    } else {
+        return $_POST[$keys];
+    }
 }
 
 /**

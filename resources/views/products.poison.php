@@ -1,6 +1,6 @@
-<?php
+@extend('layouts/page', ['title' => "Coach - Produits", 'page_title' => "Produits", 'id' => "products-header"])
 
-$content = "
+@content
 
 <div class='product-section' style='padding: 4%'>
 
@@ -30,7 +30,4 @@ $content = "
 
 </div>
 
-";
-
-$poison->render('layouts/page', ['title' => "Coach - Produits", 'page_title' => "Produits", 'id' => "products-header", 'content' => $content]);
-
+@endcontent

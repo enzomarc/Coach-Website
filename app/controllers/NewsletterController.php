@@ -7,7 +7,7 @@ use App\Models\Database;
 class NewsletterController
 {
 
-    public static function addMail(): void
+    public function addMail()
     {
         $email = input('email');
         $query = Database::GetDB()->prepare("SELECT * FROM newsletter WHERE email = ?");
@@ -19,7 +19,20 @@ class NewsletterController
             $query->execute([$email, date("Y-m-d")]);
         }
 
-        redirect('home');
+        return redirect('home');
+    }
+
+    public function addMessage()
+    {
+        $datas = input();
+        $datas['date'] = date("Y-m-d");
+        $query = Database::GetDB()->prepare("INSERT INTO messages(messages.from, messages.message, messages.date) VALUES (:email, :message, :date)");
+        $query->bindValue(':email', $datas['email']);
+        $query->bindValue(':message', $datas['message']);
+        $query->bindValue(':date', $datas['date']);
+        $query->execute();
+
+        return redirect('contact');
     }
 
 }

@@ -15,4 +15,12 @@ $router->get('/products', 'PagesController@products')->name('products');
 
 $router->get('/contact', 'PagesController@contact')->name('contact');
 
+$router->get('/blog', 'PagesController@blog')->name('blog');
+
+$router->get('/reservation', 'PagesController@reservationStudent')->name('reservation.student');
+
+$router->post('/reservation', 'PagesController@sendReservation')->name('reservation.send');
+
 $router->post('/newsletter', 'NewsletterController@addMail')->name('newsletter.add');
+
+$router->post('/contact', 'NewsletterController@addMessage')->name('message.add');

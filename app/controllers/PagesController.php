@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Poison;
+use App\Models\Reservation;
 
 class PagesController
 {
@@ -25,6 +25,28 @@ class PagesController
     public function contact()
     {
         return view('contact');
+    }
+
+    public function blog()
+    {
+        return view('blog');
+    }
+
+    public function reservation($slug)
+    {
+        redirect('reservation.page', compact($slug));
+    }
+
+    public function sendReservation()
+    {
+        $reservation = new Reservation(input());
+        $reservation->save();
+        return redirect('reservation.student');
+    }
+
+    public function reservationStudent()
+    {
+        return view('reservation', ['slug' => 'student']);
     }
 
 }

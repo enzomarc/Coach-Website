@@ -103,6 +103,10 @@ class Poison
             $real = str_replace("@else", "<?php else: ?>", $tag);
         }
 
+        if(startsWith($tag, '@elseif')) {
+            $real = str_replace("@elseif", "<?php elseif: ?>", $tag);
+        }
+
         if(startsWith($tag, '@endif')) {
             $real = str_replace("@endif", "<?php endif; ?>", $tag);
         }
@@ -111,12 +115,25 @@ class Poison
             $real = str_replace("{?", "<?php", $tag);
         }
 
-        if (startsWith($tag, '{?')) {
-            $real = str_replace("{?", "<?php", $tag);
-        }
-
         if (startsWith($tag, '?}')) {
             $real = str_replace("?}", "?>", $tag);
+        }
+
+        if (startsWith($tag, '@extend')) {
+            $real = str_replace('@extend', '', $tag);
+            $real = str_replace('(', '[', $real);
+            $real = str_replace(')', ']', $real);
+            $real = "<?php \$extension=" . $real;
+            $real = $real . "; ?>";
+            $real = str_replace("\"", "'", $real);
+        }
+
+        if (startsWith($tag, '@content')) {
+            $real = str_replace("@content", "<?php ob_start(); ?>", $tag);
+        }
+
+        if (startsWith($tag, '@endcontent')) {
+            $real = str_replace("@endcontent", "<?php \$extension[1]['content'] = ob_get_clean(); \$poison->render(\$extension[0], \$extension[1]); ?>", $tag);
         }
 
         /*
@@ -143,13 +160,7 @@ class Poison
     private function parseTemplate(string $contents, array $params = []): string
     {
 
-        # Créer un tableau contenant toutes les règles de validation des tags (regex)
-        # Parcourir le template
-        # A chaque fois qu'on rencontre un tag qui match une règle
-            # On vérifie le début du tag pour savoir ce qu'il est sensé faire
-            # On appelle la fonction réelle à la place du tag en lui passant les paramètres
-
-        preg_match_all("#(\{[@?!])(.*){1,}([@?!]\})|(\@\w+)([\(](.+)[\)])|(\{{2}(.*){1,}\}{2})|(\{[@?!]+)|([@?!]+\})#imxU", $contents, $matches);
+        preg_match_all("#(\{[@?!])(.*){1,}([@?!]\})|(\@\w+)([\(]*(.+)+?[\)]*)|(\{{2}(.*){1,}\}{2})|(\{[@?!]+)|([@?!]+\})#imxU", $contents, $matches);
 
         if (count($matches) > 0)
         {
@@ -173,6 +184,7 @@ class Poison
             extract($this->globals);
             extract($params);
             require($cachedFile);
+
             return ob_get_clean();
 
         } else {
@@ -193,9 +205,12 @@ class Poison
         $view = str_replace('.', DIRECTORY_SEPARATOR, $view);
         $path = self::$viewsPath . DIRECTORY_SEPARATOR . $view . self::$viewExtension;
 
-        $output = $this->parseTemplate(file_get_contents($path), $params);
-
-        echo $output;
+        if (file_exists($path)) {
+            $output = $this->parseTemplate(file_get_contents($path), $params);
+            echo $output;
+        } else {
+            throw new \Exception("View [{$view}] not found.");
+        }
     }
 
     /**
@@ -217,9 +232,12 @@ class Poison
         $file = str_replace('.', DIRECTORY_SEPARATOR, $file);
         $path = self::$viewsPath . DIRECTORY_SEPARATOR . $file . self::$viewExtension;
 
-        $output = $this->parseTemplate(file_get_contents($path));
-
-        echo $output;
+        if (file_exists($path)) {
+            $output = $this->parseTemplate(file_get_contents($path));
+            echo $output;
+        } else {
+            throw new \Exception("File [{$file}] not found.");
+        }
     }
 
 }
