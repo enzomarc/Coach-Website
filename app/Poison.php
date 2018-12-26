@@ -206,6 +206,8 @@ class Poison
         $path = self::$viewsPath . DIRECTORY_SEPARATOR . $view . self::$viewExtension;
 
         if (file_exists($path)) {
+            Flash::progress();  // Check the flash message life
+
             $output = $this->parseTemplate(file_get_contents($path), $params);
             echo $output;
         } else {

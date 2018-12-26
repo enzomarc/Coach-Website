@@ -104,7 +104,7 @@ function session()
     return $_SESSION;
 }
 
-function session_clear()
+function session_close()
 {
     if (!isset($_SESSION))
         session_start();

@@ -29,5 +29,11 @@ $router->get('/blog', 'PagesController@blog')->name('blog');
 
 /* Writer */
 
-$router->get('/author', 'PagesController@author')->name('author');
-$router->post('/author', 'PagesController@authorLogin')->name('author.login');
+$router->get('/dashboard', 'PagesController@author')->name('author');
+$router->post('/dashboard', 'PagesController@authorLogin')->name('author.login');
+
+$router->resource('post', 'PostsController');
+
+/* $router->get('/hash/:password', function ($password) {
+    echo sha1($password);
+}); */

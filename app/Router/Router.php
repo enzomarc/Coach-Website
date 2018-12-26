@@ -30,6 +30,17 @@ class Router
         return $this->add($path, $callable, 'POST', $name);
     }
 
+    public function resource(string $model, $controller)
+    {
+        $models = $model . 's';
+
+        $this->add($models, $controller . '@index', 'GET', $models);
+        $this->add($models . '/' . $model, $controller . '@show', 'GET', $models . '.show');
+        $this->add($models, $controller . '@create', 'POST', $models . '.create');
+        $this->add($models, $controller . '@update', 'POST', $models . '.update');
+        $this->add($models, $controller . '@delete', 'POST', $models . '.delete');
+    }
+
     private function add(string $path, $callable, string $method, string $name = null) : Route
     {
         $route = new Route($this, $path, $callable, self::$controllersPath);
@@ -82,6 +93,11 @@ class Router
     public static function setDefaultNamespace(string $namespace): void
     {
         self::$controllersPath = $namespace;
+    }
+
+    public function routes()
+    {
+        return $this->routes;
     }
 
 }

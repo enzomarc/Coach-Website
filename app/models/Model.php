@@ -32,10 +32,10 @@ class Model
         return $this->datas[$key];
     }
 
-    public function find($id)
+    public function find(string $param, $value)
     {
-        $query = Database::GetDB()->prepare("SELECT * FROM ". $this->table_name ." WHERE id = :id");
-        $query->bindValue(':id', $id);
+        $query = Database::GetDB()->prepare("SELECT * FROM ". $this->table_name ." WHERE ". $param ." = :val");
+        $query->bindValue(':val', $val);
         if ($query->execute()) {
             $this->datas = $query->fetchAll();
             return $this;

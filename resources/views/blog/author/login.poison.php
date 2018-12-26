@@ -30,7 +30,13 @@
 
     </form>
 
-    {? echo 'Random'; ?}
+    @if(App\Flash::exists())
+
+        <div class="message">
+            <p>{{ App\Flash::message() }}</p>
+        </div>
+
+    @endif
 
 </div>
 
