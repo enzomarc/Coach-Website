@@ -79,3 +79,37 @@ function endsWith($haystack, $needle)
 
     return (substr($haystack, -$length) === $needle);
 }
+
+function session_get($key)
+{
+    if (!isset($_SESSION))
+        session_start();
+
+    return isset($_SESSION[$key]) ? $_SESSION[$key] : null;
+}
+
+function session_set($key, $value)
+{
+    if (!isset($_SESSION))
+        session_start();
+
+    $_SESSION[$key] = $value;
+}
+
+function session()
+{
+    if (!isset($_SESSION))
+        session_start();
+
+    return $_SESSION;
+}
+
+function session_clear()
+{
+    if (!isset($_SESSION))
+        session_start();
+
+    session_unset();
+    session_regenerate_id(true);
+    session_destroy();
+}

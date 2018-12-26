@@ -96,7 +96,7 @@ class Poison
 
         if(startsWith($tag, '@if')) {
             $real = str_replace("@if", "<?php if", $tag);
-            $real = substr($real, 0, strlen($real) - 1) . "): ?>";
+            $real = $real . ": ?>";
         }
 
         if(startsWith($tag, '@else')) {

@@ -152,6 +152,10 @@ header#reservation-header {
     background-image: url("../img/products.jpg");
 }
 
+header#blog-header {
+    background-image: url("../img/blog.jpg");
+}
+
 div.product-section iframe {
     width: 100%;
 }

@@ -1,0 +1,78 @@
+div.row div.sort {
+    text-align: center;
+    margin: 6rem 0;
+}
+
+div.row div.sort a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 600;
+}
+
+div.row div.sort :first-child {
+    margin-right: 1rem;
+}
+
+div.row div.sort :last-child {
+    margin-left: 1rem;
+}
+
+div.posts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+div.posts-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+div.posts-row div.post {
+    width: 30rem;
+    margin: 0 2rem 5rem 0;
+    background-color: #fafafa;
+    padding: 2%;
+}
+
+div.posts-row div.post div.post-desc h6 {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+div.posts-row div.post div.post-desc p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+div.posts-row div.post div.post-desc a.post-link {
+    text-decoration: none;
+    color: #2a2a2a;
+}
+
+div.posts-row div.post div.post-desc p.post-description {
+    color: #444;
+}
+
+div.posts-row div.post div.post-desc p.date {
+    color: #999;
+}
+
+div.posts-row div.post a.post-btn {
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: .9rem 1.8rem;
+    border-radius: 2px;
+    box-shadow: none;
+    background-color: #ED5453;
+    color: #fff;
+    border: solid 1px #ED5453;
+    transition: all .3s;
+}
+
+div.posts-row div.post a.post-btn:hover {
+    box-shadow: 0 2px 5px #ED5453;
+    transition: all .3s;
+}

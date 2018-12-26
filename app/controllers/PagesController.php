@@ -2,7 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Models\Database;
 use App\Models\Reservation;
+use App\Flash;
 
 class PagesController
 {
@@ -29,7 +31,31 @@ class PagesController
 
     public function blog()
     {
-        return view('blog');
+        return view('blog.post');
+    }
+
+    public function author()
+    {
+        if (session_get('logged_in') == true)
+            return view('blog.author.index');
+        else
+            return view('blog.author.login');
+    }
+
+    public function authorLogin()
+    {
+        $datas = input();
+        $datas['password'] = sha1($datas['password']);
+        $query = Database::GetDB()->prepare("SELECT * FROM authors WHERE username = ? AND password = ?");
+
+        if ($query->execute($datas))
+            session_set('logged_in', true);
+        else {
+            $flash = new Flash();
+            $flash->error("Nom d'utilisateur ou mot de passe incorrect !");
+        }
+
+        redirect('author');
     }
 
     public function reservation($slug)

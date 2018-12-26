@@ -1,12 +1,15 @@
-<html>
+<!doctype html>
 <head>
     <title><?= $title ?></title>
     @include('partials.assets_css')
-    <link rel="stylesheet" href="public/assets/css/page.css">
+    <link rel="stylesheet" href="assets/css/page.css">
+    @if($id == 'blog-header')
+    <link rel="stylesheet" href="assets/css/blog.css">
+    @endif
 </head>
 <body style="width: 100%">
 
-<header class="desktop row" id="{{ $id }}">
+<header class="desktop row page" id="{{ $id }}" style="height: 30rem;">
 
     <div id="navbar">
 
@@ -49,7 +52,7 @@
 
     </div>
 
-    <div class="shadow" style="min-height: 0; max-height: 40%; height: 40%;"></div>
+    <div class="shadow" style="min-height: 0; max-height: 30rem; height: 30rem;"></div>
 
 </header>
 

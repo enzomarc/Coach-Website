@@ -40,7 +40,7 @@
     <div class='row'>
     
         <div id='googleMap' style='width:100%;'>
-            <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8377322307197!2d9.728557614437365!3d4.053495648058607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10610d8268055463%3A0x25188da31dfb0017!2zNMKwMDMnMDkuOCJOIDnCsDQzJzUxLjIiRQ!5e0!3m2!1sfr!2scm!4v1523054031934\" width=\"100%\" height=\"500\" frameborder=\"0\"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8377322307197!2d9.728557614437365!3d4.053495648058607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10610d8268055463%3A0x25188da31dfb0017!2zNMKwMDMnMDkuOCJOIDnCsDQzJzUxLjIiRQ!5e0!3m2!1sfr!2scm!4v1523054031934" width="100%" height="500" frameborder="0"></iframe>
         </div>
     
     </div>
