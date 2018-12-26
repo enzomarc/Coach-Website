@@ -30,10 +30,14 @@ $router->get('/blog', 'PagesController@blog')->name('blog');
 /* Writer */
 
 $router->get('/dashboard', 'PagesController@author')->name('author');
+$router->get('/new-post', 'PagesController@write')->name('author.write');
 $router->post('/dashboard', 'PagesController@authorLogin')->name('author.login');
+$router->post('/post', function () {
+    dd(input());
+})->name('post');
 
 $router->resource('post', 'PostsController');
 
-/* $router->get('/hash/:password', function ($password) {
-    echo sha1($password);
-}); */
+$router->get('/hash/', function () {
+    echo $_SERVER['DOCUMENT_ROOT'];
+});

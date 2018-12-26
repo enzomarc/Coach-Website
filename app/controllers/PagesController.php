@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Database;
+use App\Models\Post;
 use App\Models\Reservation;
 use App\Flash;
 
@@ -36,10 +37,21 @@ class PagesController
 
     public function author()
     {
-        if (session_get('logged_in') == true)
-            return view('blog.author.index', ['author' => session_get('author')]);
+        if (session_get('logged_in') == true) {
+            $author = session_get('author');
+            $posts = Post::find('author', $author->id);
+            return view('blog.author.index', ['author' => $author, 'posts' => $posts]);
+        }
         else
             return view('blog.author.login');
+    }
+
+    public function write()
+    {
+        if (session_get('logged_in') == true) {
+            $author = session_get('author');
+            return view('blog.author.write', ['author' => $author]);
+        }
     }
 
     public function authorLogin()

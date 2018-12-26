@@ -2,4 +2,4 @@
 <script src="assets/js/scrollreveal.js"></script>
 <script src="assets/js/slick.min.js"></script>
 <script src="assets/js/parallax.js"></script>
-<script src="assets/js/app.offline.js"></script>
+<script src="assets/js/app.js"></script>

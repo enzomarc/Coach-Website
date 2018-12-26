@@ -7,6 +7,7 @@ class Model
 
     protected $datas = [];
     protected $table_name;
+    protected $identifier = 'id';
 
     public function __construct(array $datas = [])
     {
@@ -22,9 +23,23 @@ class Model
         $this->datas[$key] = $value;
     }
 
-    public function all(): array
+    public function datas(): array
     {
         return $this->datas;
+    }
+
+    public static function all()
+    {
+        $table = explode('\\', get_called_class());
+        $table_name = strtolower($table[count($table) - 1]) . 's';
+
+        $query = Database::GetDB()->prepare("SELECT * FROM ". $table_name);
+
+        if ($query->execute()) {
+            return $query->fetchAll(\PDO::FETCH_OBJ);
+        }
+
+        return false;
     }
 
     public function get($key)
@@ -32,13 +47,16 @@ class Model
         return $this->datas[$key];
     }
 
-    public function find(string $param, $value)
+    public static function find($param, $value)
     {
-        $query = Database::GetDB()->prepare("SELECT * FROM ". $this->table_name ." WHERE ". $param ." = :val");
-        $query->bindValue(':val', $val);
+        $table = explode('\\', get_called_class());
+        $table_name = strtolower($table[count($table) - 1]) . 's';
+
+        $query = Database::GetDB()->prepare("SELECT * FROM ". $table_name ." WHERE ". $param ." = :val");
+        $query->bindValue(':val', $value);
+
         if ($query->execute()) {
-            $this->datas = $query->fetchAll();
-            return $this;
+            return $query->fetchAll(\PDO::FETCH_OBJ);
         }
 
         return false;

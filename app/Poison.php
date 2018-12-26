@@ -87,7 +87,7 @@ class Poison
 
         if(startsWith($tag, '@foreach')) {
             $real = str_replace("@foreach", "<?php foreach", $tag);
-            $real = substr($real, 0, strlen($real) - 1) . "): ?>";
+            $real = $real . ": ?>";
         }
 
         if(startsWith($tag, '@endforeach')) {
@@ -104,7 +104,8 @@ class Poison
         }
 
         if(startsWith($tag, '@elseif')) {
-            $real = str_replace("@elseif", "<?php elseif: ?>", $tag);
+            $real = str_replace("@elseif", "<?php elseif", $tag);
+            $real = $real . ": ?>";
         }
 
         if(startsWith($tag, '@endif')) {
