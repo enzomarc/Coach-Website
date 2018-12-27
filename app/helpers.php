@@ -96,6 +96,14 @@ function session_set($key, $value)
     $_SESSION[$key] = $value;
 }
 
+function sess_unset($key)
+{
+    if (!isset($_SESSION))
+        session_start();
+
+    unset($_SESSION[$key]);
+}
+
 function session()
 {
     if (!isset($_SESSION))
@@ -112,4 +120,31 @@ function session_close()
     session_unset();
     session_regenerate_id(true);
     session_destroy();
+}
+
+function upload($file, $dir)
+{
+    $extension = explode('.', $file['name'])[sizeof(explode('.', $file['name'])) - 1];
+    $fileName = uniqid('post_bg.') . '.' . $extension;
+    $target = $dir . $fileName;
+
+    if (file_exists($target)) {
+        return "File exists !";
+    }
+
+    if ($file["size"] > 500000) {
+        return "File is too big";
+    }
+
+    if (move_uploaded_file($file["tmp_name"], $target)) {
+        session_set('uploaded', $fileName);
+        return true;
+    } else {
+        return "Error during upload";
+    }
+}
+
+function toSnakeCase(string $str)
+{
+    return str_replace('-', '_', str_replace(' ', '_', strtolower($str)));
 }

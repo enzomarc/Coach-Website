@@ -14,9 +14,10 @@ class Reservation extends Model
     public function save($datas = [])
     {
         $query = Database::GetDB()->prepare("INSERT INTO ". $this->table_name ." (email, phone, scheduled, ". $this->table_name .".from, ". $this->table_name .".to, message, ". $this->table_name .".type) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $datas = count($datas) > 0 ? $datas : $this->datas;
+        $datas = count($datas) > 0 ? $datas : $this->object_datas();
+
         if ($query->execute($datas))
-            return $this;
+            return true;
 
         return false;
     }
@@ -26,7 +27,7 @@ class Reservation extends Model
         $query = Database::GetDB()->prepare("UPDATE ". $this->table_name ." SET email = ?, phone = ?, scheduled = ?, from = ?, to = ?, message = ?");
         $datas = count($datas) > 0 ? $datas : $this->datas;
         if ($query->execute($datas))
-            return $this;
+            return true;
 
         return false;
     }

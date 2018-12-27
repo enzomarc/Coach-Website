@@ -10,7 +10,8 @@
         <h6>Et si notre futur se trouve en nos enfants ?</h6>
     </div>
 
-    <div class='row' id='main'>
+    <div class='slide row' id='main'>
+
         <div class='shadow row'>
 
             <div class='eight columns left'>
@@ -47,7 +48,7 @@
 
 </div>
 
-<div class='section' id='adult-section'>
+<div class='adult section' id='adult-section'>
 
     <div class='row adult-top' id='top'>
         <h5>Adultes</h5>
@@ -55,7 +56,8 @@
         <h6>Confus ? Besoin de clarté ? Besoin d'outils pour transformer vos idées en business ?</h6>
     </div>
 
-    <div class='row' id='main'>
+    <div class='slide row' id='main'>
+
         <div class='shadow row'>
 
             <div class='four columns'>
@@ -109,7 +111,7 @@
 
 </div>
 
-<div class='section' id='company-section'>
+<div class='company section' id='company-section'>
 
     <div class='row company-top' id='top'>
         <h5>Entreprises</h5>
@@ -121,6 +123,7 @@
     </div>
 
     <div class='row' id='main'>
+
         <div class='shadow row'>
 
             <div class='eight columns left'>

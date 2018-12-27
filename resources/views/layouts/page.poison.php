@@ -24,7 +24,7 @@
                     <li><a href="#">Accueil</a></li>
                     <li><a href="@url('services')">Services</a></li>
                     <li><a href="@url('products')">Produits</a></li>
-                    <li><a href="@url('blog')">Blog</a></li>
+                    <li><a href="@url('blog.index')">Blog</a></li>
                     <li><a href="@url('contact')">Contact</a></li>
                     <li id="back-btn"><a href="#"><i class="fas fa-chevron-left"></i>Back</a></li>
                 </ul>

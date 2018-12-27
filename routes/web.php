@@ -25,19 +25,16 @@ $router->post('/contact', 'NewsletterController@addMessage')->name('message.add'
 
 /* Blog */
 
-$router->get('/blog', 'PagesController@blog')->name('blog');
+$router->get('/blog', 'PagesController@blog')->name('blog.index');
+$router->get('/blog', 'PagesController@blog_older')->name('blog.index.older');
+$router->get('/blog/post/:post', 'PostsController@show')->name('blog.show');
 
 /* Writer */
 
 $router->get('/dashboard', 'PagesController@author')->name('author');
 $router->get('/new-post', 'PagesController@write')->name('author.write');
 $router->post('/dashboard', 'PagesController@authorLogin')->name('author.login');
-$router->post('/post', function () {
-    dd(input());
-})->name('post');
+$router->get('/dashboard/logout', 'PagesController@authorLogout')->name('author.logout');
 
-$router->resource('post', 'PostsController');
-
-$router->get('/hash/', function () {
-    echo $_SERVER['DOCUMENT_ROOT'];
-});
+$router->resource('posts', 'PostsController');
+$router->get('posts/:post/publish', 'PostsController@publish')->name('posts.publish');

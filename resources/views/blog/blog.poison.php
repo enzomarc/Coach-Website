@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="sort">
-            <a href="#">Les plus récents</a> | <a href="#">Les plus anciens</a>
+            <a href="@url('blog.index')">Les plus récents</a> | <a href="@url('blog.index.older')">Les plus anciens</a>
         </div>
     </div>
 
@@ -14,103 +14,23 @@
 
         <div class="posts-row">
 
+            @foreach($posts as $post)
+
             <div class="post">
-                <div class="row post-img">
-                    <img src="assets/img/bg1.png" alt="post-img" style="height: 30%; width: 100%;">
-                </div>
+                <div class="row post-img" style="background-image: url('uploads/posts_bg/{{ $post->image }}'); background-size: cover; background-repeat: no-repeat; height: 10em;"></div>
                 <div class="post-desc">
-                    <a href="#" class="post-link"><h6 class="post-title">Post title</h6></a>
+                    <a href="@url('blog.show', ['post' => $post->id])" class="post-link">
+                        <h6 class="post-title">{{ $post->title }}</h6>
+                    </a>
                     <p class="post-descripiton">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquam aliquid cum delectus dolore dolorem
+                        {{ substr($post->description, 0, 200) . " ..." }}
                     </p>
-                    <p class="date">11/01/2019</p>
-                    <a href="#" class="post-btn">Lire la suite</a>
+                    <p class="date">{{ date('Y/m/d', strtotime($post->created_at)) }}</p>
+                    <a href="@url('blog.show', ['post' => $post->id])" class="post-btn">Lire la suite</a>
                 </div>
             </div>
 
-            <div class="post">
-                <div class="row post-img">
-                    <img src="assets/img/bg1.png" alt="post-img" style="height: 30%; width: 100%;">
-                </div>
-                <div class="post-desc">
-                    <h6 class="post-title">Post title</h6>
-                    <p class="post-descripiton">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquam aliquid cum delectus dolore dolorem
-                    </p>
-                    <p class="date">11/01/2019</p>
-                    <a href="#" class="post-btn">Lire la suite</a>
-                </div>
-            </div>
-
-            <div class="post">
-                <div class="row post-img">
-                    <img src="assets/img/bg1.png" alt="post-img" style="height: 30%; width: 100%;">
-                </div>
-                <div class="post-desc">
-                    <h6 class="post-title">Post title</h6>
-                    <p class="post-descripiton">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquam aliquid cum delectus dolore dolorem
-                    </p>
-                    <p class="date">11/01/2019</p>
-                    <a href="#" class="post-btn">Lire la suite</a>
-                </div>
-            </div>
-
-            <div class="post">
-                <div class="row post-img">
-                    <img src="assets/img/bg1.png" alt="post-img" style="height: 30%; width: 100%;">
-                </div>
-                <div class="post-desc">
-                    <h6 class="post-title">Post title</h6>
-                    <p class="post-descripiton">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquam aliquid cum delectus dolore dolorem
-                    </p>
-                    <p class="date">11/01/2019</p>
-                    <a href="#" class="post-btn">Lire la suite</a>
-                </div>
-            </div>
-
-            <div class="post">
-                <div class="row post-img">
-                    <img src="assets/img/bg1.png" alt="post-img" style="height: 30%; width: 100%;">
-                </div>
-                <div class="post-desc">
-                    <h6 class="post-title">Post title</h6>
-                    <p class="post-descripiton">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquam aliquid cum delectus dolore dolorem
-                    </p>
-                    <p class="date">11/01/2019</p>
-                    <a href="#" class="post-btn">Lire la suite</a>
-                </div>
-            </div>
-
-            <div class="post">
-                <div class="row post-img">
-                    <img src="assets/img/bg1.png" alt="post-img" style="height: 30%; width: 100%;">
-                </div>
-                <div class="post-desc">
-                    <h6 class="post-title">Post title</h6>
-                    <p class="post-descripiton">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquam aliquid cum delectus dolore dolorem
-                    </p>
-                    <p class="date">11/01/2019</p>
-                    <a href="#" class="post-btn">Lire la suite</a>
-                </div>
-            </div>
-
-            <div class="post">
-                <div class="row post-img">
-                    <img src="assets/img/bg1.png" alt="post-img" style="height: 30%; width: 100%;">
-                </div>
-                <div class="post-desc">
-                    <h6 class="post-title">Post title</h6>
-                    <p class="post-descripiton">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias aliquam aliquid cum delectus dolore dolorem
-                    </p>
-                    <p class="date">11/01/2019</p>
-                    <a href="#" class="post-btn">Lire la suite</a>
-                </div>
-            </div>
+            @endforeach
 
         </div>
 

@@ -28,15 +28,15 @@
             <button class="u-full-width" type="submit">Connexion</button>
         </div>
 
-    </form>
+        @if(App\Flash::exists())
 
-    @if(App\Flash::exists())
-
-        <div class="message">
+        <div class="message" style="padding: 2% 3%; text-align: center">
             <p>{{ App\Flash::message() }}</p>
         </div>
 
-    @endif
+        @endif
+
+    </form>
 
 </div>
 

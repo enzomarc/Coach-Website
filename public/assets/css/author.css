@@ -82,3 +82,32 @@ a#publish-btn:hover {
     color: #fff;
     transition: all .3s;
 }
+
+/* WYSIWYG Editor */
+
+textarea#editor {
+    margin-bottom: 50px;
+    height: 500px;
+}
+
+/* Others */
+
+input[type="text"], textarea {
+    width: 100%;
+    font-size: 15px;
+    border-radius: 0;
+    border: solid 1px #ddd;
+    padding: 20px;
+}
+
+textarea {
+    height: 150px;
+}
+
+button.post-btn {
+    margin-top: 2%;
+    background-color: #2a2a2a;
+    color: #fff;
+    border: solid 1px #2a2a2a;
+    border-radius: 0;
+}

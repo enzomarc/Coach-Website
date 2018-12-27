@@ -32,13 +32,18 @@ class Router
 
     public function resource(string $model, $controller)
     {
-        $models = $model . 's';
+        if (endsWith($model, 'ies'))
+            $single = substr($model, 0, strlen($model) - 3) . 'y';
+        elseif (endsWith($model, 's'))
+            $single = substr($model, 0, strlen($model) - 1);
 
-        $this->add($models, $controller . '@index', 'GET', $models);
-        $this->add($models . '/' . $model, $controller . '@show', 'GET', $models . '.show');
-        $this->add($models, $controller . '@create', 'POST', $models . '.create');
-        $this->add($models, $controller . '@update', 'POST', $models . '.update');
-        $this->add($models, $controller . '@delete', 'POST', $models . '.delete');
+        $this->add($model, $controller . '@index', 'GET', $model . '.index');
+        $this->add($model . '/create', $controller . '@create', 'GET', $model . '.create');
+        $this->add($model, $controller . '@store', 'POST', $model . '.store');
+        $this->add($model . '/:' . $single, $controller . '@show', $model . '.show');
+        $this->add($model . '/:' . $single . '/edit', $controller . '@edit', 'GET', $model . '.edit');
+        $this->add($model . '/:' . $single, $controller . '@update', 'POST', $model . '.update');
+        $this->add($model . '/:' . $single . '/delete', $controller . '@destroy', 'GET', $model . '.destroy');
     }
 
     private function add(string $path, $callable, string $method, string $name = null) : Route
@@ -78,7 +83,7 @@ class Router
             throw new RouterException('No route matches this name ' . $name);
         }
 
-        return $this->namedRoutes[$name]->getUrl($params);
+        return '/' . $this->namedRoutes[$name]->getUrl($params);
     }
 
     public function redirect(string $name, array $params = []): void
@@ -87,7 +92,7 @@ class Router
             throw new RouterException('No route matches this name ' . $name);
         }
 
-        header('location: ' . $this->namedRoutes[$name]->getUrl($params));
+        header('location: /' . $this->namedRoutes[$name]->getUrl($params));
     }
 
     public static function setDefaultNamespace(string $namespace): void

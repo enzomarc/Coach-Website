@@ -32,14 +32,21 @@ class PagesController
 
     public function blog()
     {
-        return view('blog.post');
+        $posts = Post::all('public = 1');
+        return view('blog.blog', ['posts' => $posts]);
+    }
+
+    public function blog_older()
+    {
+        $posts = array_reverse(Post::all('public = 1'), true);
+        return view('blog.blog', ['posts' => $posts]);
     }
 
     public function author()
     {
         if (session_get('logged_in') == true) {
             $author = session_get('author');
-            $posts = Post::find('author', $author->id);
+            $posts = Post::all("author = " . $author->id);
             return view('blog.author.index', ['author' => $author, 'posts' => $posts]);
         }
         else
@@ -74,7 +81,17 @@ class PagesController
             Flash::set("Nom d'utilisateur ou mot de passe incorrect !");
         }
 
-        redirect('author');
+        return redirect('author');
+    }
+
+    public function authorLogout()
+    {
+        if (session_get('logged_in') == true) {
+            sess_unset('logged_in');
+            sess_unset('author');
+        }
+
+        return redirect('services');
     }
 
     public function reservation($slug)
@@ -85,7 +102,14 @@ class PagesController
     public function sendReservation()
     {
         $reservation = new Reservation(input());
-        $reservation->save();
+
+        if ($reservation->message == "") $reservation->message = null;
+
+        if ($reservation->save())
+            Flash::set("Réservation envoyée. Merci pour votre confiance.");
+        else
+            Flash::set("Erreur lors de l'envoi de la réservation.");
+
         return redirect('reservation.student');
     }
 

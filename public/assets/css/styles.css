@@ -187,7 +187,7 @@ div#top {
 }
 
 btn.transparent, a.btn.transparent {
-    background-color: transparent;
+    background-color: #B45023;
     background-image: none;
     border: solid 1px #B45023;
     box-shadow: none;
@@ -197,7 +197,9 @@ btn.transparent, a.btn.transparent {
 }
 
 .btn.transparent:hover, a.btn.transparent:hover {
-    background-color: #B45023;
+    background-color: #fff;
+    color: #B45023;
+    border: solid 1px #fff;
 }
 
 header.desktop div.container div.email form {
@@ -429,7 +431,8 @@ div.section div#main div.packages hr.title-hr {
 }
 
 div.section div#main div.shadow div.slider {
-    height: 5%;
+    height: 4em;
+    font-size: 1.3em;
     padding: 0 10% 0 10%;
 }
 
@@ -640,4 +643,24 @@ footer div.four form button:hover {
     background-color: #fff;
     color: #ED5453;
     transition: all .4s;
+}
+
+div.message {
+    background-color: #D5F1FF;
+    padding: 1.2%;
+    border-radius: 3px;
+    margin: 4% 0;
+}
+
+div.message p {
+    margin: 0;
+}
+
+.fullBg {
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
 }

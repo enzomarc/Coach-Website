@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>{{ $title }}</title>
+    <link rel="stylesheet" href="/assets/css/slidesbg.css">
     @include('partials.assets_css')
 </head>
 <body style="width: 100%">
@@ -21,7 +22,7 @@
                     <li><a href="#">Accueil</a></li>
                     <li><a href="@url('services')">Services</a></li>
                     <li><a href="@url('products')">Produits</a></li>
-                    <li><a href="https://medium.com/@heatherpicken">Blog</a></li>
+                    <li><a href="@url('blog.index')">Blog</a></li>
                     <li><a href="@url('contact')">Contact</a></li>
                     <li id="back-btn"><a href="#"><i class="fas fa-chevron-left"></i>Back</a></li>
                 </ul>
@@ -67,6 +68,7 @@
 
 @include('partials.footer')
 @include('partials.assets_js')
+<script src="/assets/js/slidesbg.min.js"></script>
 
 </body>
 </html>

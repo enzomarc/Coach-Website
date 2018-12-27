@@ -6,6 +6,14 @@
 
     <div class="row" id="form_row">
 
+        @if(App\Flash::exists())
+
+        <div class="message">
+            <p>{{ App\Flash::message() }}</p>
+        </div>
+
+        @endif
+
         <form action="@url('reservation.send')" method="POST">
 
             <div class="row u-full-width">
@@ -24,7 +32,7 @@
 
             <div class="row u-full-width">
                 <label for="date">Date de rendez-vous</label>
-                <input class="u-full-width" type="date" name="date" id="date">
+                <input class="u-full-width" type="date" name="date" min="{{ date('Y-m-d') }}" id="date">
             </div>
 
             <div class="row u-full-width">

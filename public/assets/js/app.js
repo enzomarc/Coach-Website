@@ -50,23 +50,65 @@ $(function () {
     })
 
     $('header#header').parallax({
-        imageSrc: 'public/assets/img/bg.jpg',
+        imageSrc: '/assets/img/bg.jpg',
         speed: 0.5
     })
 
     $('div#teen-section div#main').parallax({
-        imageSrc: 'public/assets/img/bg3.jpg',
+        imageSrc: '/assets/img/bg3.jpg',
         speed: 0.5
     })
 
     $('div#adult-section div#main').parallax({
-        imageSrc: 'public/assets/img/bg4.jpg',
+        imageSrc: '/assets/img/bg4.jpg',
         speed: 0.5
     })
 
     $('div#company-section div#main').parallax({
-        imageSrc: 'public/assets/img/bg5.jpg',
+        imageSrc: '/assets/img/bg5.jpg',
         speed: 0.5
+    })
+
+    var slides1 = [
+        "/assets/img/sliders/1.jpg",
+        "/assets/img/sliders/2.jpg",
+        "/assets/img/sliders/3.jpg"
+    ]
+
+    var slides2 = [
+        "/assets/img/sliders/4.jpg",
+        "/assets/img/sliders/5.jpg",
+        "/assets/img/sliders/6.jpg"
+    ]
+
+    var slides3 = [
+        "/assets/img/sliders/7.jpg",
+        "/assets/img/sliders/8.jpg",
+        "/assets/img/sliders/9.jpg"
+    ]
+
+    $('div#company-section div#main').slidesbg({
+        dataSlide: slides3,
+        autoplay: true,
+        nav: false,
+        pagination: false,
+        delay: 3000
+    })
+
+    $('div#adult-section div#main').slidesbg({
+        dataSlide: slides2,
+        autoplay: true,
+        nav: false,
+        pagination: false,
+        delay: 3000
+    })
+
+    $('div#teen-section div#main').slidesbg({
+        dataSlide: slides1,
+        autoplay: true,
+        nav: false,
+        pagination: false,
+        delay: 3000
     })
 
     $('.slider').slick({
@@ -129,7 +171,15 @@ $(function () {
         mobile: true
     })
 
-    sr.reveal('div.container div.main-page, div.post', {
+    sr.reveal('div.post', {
+        origin: 'bottom',
+        duration: 100,
+        delay: 100,
+        distance: '10%',
+        mobile: true
+    })
+
+    sr.reveal('div.container div.main-page', {
         origin: 'bottom',
         duration: 1000,
         delay: 500,

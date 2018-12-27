@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-    @include('partials.offline_css')
-    <link rel="stylesheet" href="assets/css/author.css">
+    @include('partials.assets_css')
+    <link rel="stylesheet" href="/assets/css/author.css">
     <title>Blog - Tableau de bord</title>
 </head>
 <body>
@@ -16,17 +16,18 @@
 
         <div class="six columns menu">
             <ul>
-                <a href="@url('author.write')"><li>Nouvel article</li></a>
-                <a href="#"><li>Paramètres</li></a>
-                <a href="#"><li>Déconnexion</li></a>
+                <a href="@url('posts.create')"><li>Nouvel article</li></a>
+                <a href="@url('author.logout')"><li>Déconnexion</li></a>
             </ul>
         </div>
     </div>
 
     <div class="row">
-        <div class="message">
-            <p>{{ \App\Flash::message() }}</p>
-        </div>
+        @if(App\Flash::exists())
+            <div class="message">
+                <p>{{ \App\Flash::message() }}</p>
+            </div>
+        @endif
     </div>
 
     <div class="row">
@@ -47,40 +48,50 @@
             </thead>
             <tbody>
 
-                @foreach($posts as $post)
+                @if(count($posts) > 0)
 
-                    <tr>
-                        <td>{{ $post->title }}</td>
-                        <td>
-                            @if($post->description == null)
-                                {{ "Pas de description" }}
-                            @else
-                                {{ $post->description }}
-                            @endif
-                        </td>
-                        <td>
-                            @if($post->public == 0)
-                                <div class="status red">Non publié</div>
-                            @elseif($post->public == 1)
-                                <div class="status green">Publié</div>
-                            @endif
-                        </td>
-                        <td>
-                            @if($post->updated_at == null)
-                                {{ $post->created_at }}
-                            @else
-                                {{ $post->updated_at }}
-                            @endif
-                        </td>
-                        <td>
-                            <a class="action-btn" href="#">Voir</a>
-                            <a class="action-btn" href="#">Publier</a>
-                            <a class="action-btn" href="#">Modifier</a>
-                            <a class="action-btn delete" href="#">Supprimer</a>
-                        </td>
-                    </tr>
+                    @foreach($posts as $post)
 
-                @endforeach
+                        <tr>
+                            <td>{{ $post->title }}</td>
+                            <td>
+                                @if($post->description == null)
+                                    {{ "Pas de description" }}
+                                @else
+                                    {{ substr($post->description, 0, 15) }} {{ "..." }}
+                                @endif
+                            </td>
+                            <td>
+                                @if($post->public == 0)
+                                    <div class="status red">Non publié</div>
+                                @elseif($post->public == 1)
+                                    <div class="status green">Publié</div>
+                                @endif
+                            </td>
+                            <td>
+                                @if($post->updated_at == null)
+                                    {{ $post->created_at }}
+                                @else
+                                    {{ $post->updated_at }}
+                                @endif
+                            </td>
+                            <td>
+                                <a class="action-btn" href="@url('blog.show', ['post' => $post->id])">Voir</a>
+                                @if($post->public == 0)
+                                    <a class="action-btn" href="@url('posts.publish', ['post' => $post->id])">Publier</a>
+                                @elseif($post->public == 1)
+                                    <a class="action-btn" href="@url('posts.publish', ['post' => $post->id])">Retirer</a>
+                                @endif
+                                <a class="action-btn" href="@url('posts.edit', ['post' => $post->id])">Modifier</a>
+                                <a class="action-btn delete" href="@url('posts.destroy', ['post' => $post->id])">Supprimer</a>
+                            </td>
+                        </tr>
+
+                    @endforeach
+
+                @else
+                    {{ "Aucun article à afficher" }}
+                @endif
 
             </tbody>
         </table>
@@ -89,6 +100,6 @@
 
 </div>
 
-@include('partials/offline_js')
+@include('partials/assets_js')
 </body>
 </html>
