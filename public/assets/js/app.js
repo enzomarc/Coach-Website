@@ -54,21 +54,6 @@ $(function () {
         speed: 0.5
     })
 
-    $('div#teen-section div#main').parallax({
-        imageSrc: '/assets/img/bg3.jpg',
-        speed: 0.5
-    })
-
-    $('div#adult-section div#main').parallax({
-        imageSrc: '/assets/img/bg4.jpg',
-        speed: 0.5
-    })
-
-    $('div#company-section div#main').parallax({
-        imageSrc: '/assets/img/bg5.jpg',
-        speed: 0.5
-    })
-
     var slides1 = [
         "/assets/img/sliders/1.jpg",
         "/assets/img/sliders/2.jpg",
