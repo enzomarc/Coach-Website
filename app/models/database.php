@@ -22,7 +22,7 @@ class Database {
      * @param string $server Database server
      * @return PDO
      */
-    public static function GetDB(string $dbname = 'coachwebsite', string $dbuser = 'root', string $dbpassword = '', string $server = 'localhost'): PDO
+    public static function GetDB(string $dbname = 'sql9613_16', string $dbuser = 'sql9613_16', string $dbpassword = 'RK2W98R7SAh', string $server = 'sql9613.phpnet.org'): PDO
     {
         if (!isset(self::$db))
             $db = new PDO('mysql:host=' . $server . '; dbname=' . $dbname . '; charset=utf8', $dbuser, $dbpassword);
