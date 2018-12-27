@@ -1,14 +1,1 @@
-html, body, div.container {
-    height: 100%;
-}
-
-div.container {
-    text-align: center;
-    padding-top: 10%;
-}
-
-div.container form {
-    text-align: initial;
-    display: inline-block;
-    width: 30%;
-}
+html,body,div.container{height:100%}div.container{text-align:center;padding-top:10%}div.container form{text-align:initial;display:inline-block;width:30%}
